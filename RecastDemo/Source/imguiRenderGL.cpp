@@ -17,7 +17,8 @@
 //
 
 #define _USE_MATH_DEFINES
-#include <math.h>
+#include <cmath>
+#include <cstdio>
 #include "imgui.h"
 #include "SDL.h"
 #include "SDL_opengl.h"
@@ -261,6 +262,7 @@ bool imguiRenderGLInit(const char* fontpath)
 	fclose(fp);
 	if (readLen != size)
 	{
+		free(ttfBuffer);
 		return false;
 	}
 
